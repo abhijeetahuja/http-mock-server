@@ -1,7 +1,7 @@
 {
   "name": "http-mock-server",
   "description": "Simple HTTP server that returns dynamic preconfigured responses to your front end.",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "engines": {
     "node": ">=0.10.0"
   },
@@ -44,6 +44,10 @@
     "gulp",
     "dynamic"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abhijeetahuja/http-mock-server"
+  },
   "directories": {
     "bin": "./bin",
     "lib": "./lib",
