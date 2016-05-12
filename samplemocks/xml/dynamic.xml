@@ -1,0 +1,5 @@
+<queen>
+	<suit>@name</suit>
+	<time>@timestamp</time>
+	<setup>@uuid</setup>
+</queen>

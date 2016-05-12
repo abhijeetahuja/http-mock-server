@@ -1,0 +1,74 @@
+{
+  "note": "used for functional tests.",
+  "mockDirectory": "./samplemocks/",
+  "port": "7879",
+  "latency": 0,
+  "allowedDomains": ["abc"],
+  "allowedHeaders": ["Content-Type", "my-custom-header"],
+  "webServices": {
+    "first": {
+      "mockFile": "king.json",
+      "contentType": "foobar",
+      "verbs": ["get"],
+      "alternatePaths": ["1st"]
+    },
+    "second": {
+      "verbs": ["delete"],
+      "httpStatus": 204
+    },
+    "royals": {
+      "verbs": ["get", "post"],
+      "responses": {
+        "get": {
+          "mockFile": "ace.json"
+        },
+        "post": {
+          "mockFile": "king.json"
+        }
+      }
+    },
+    "protected": {
+      "mockFile": "king.json",
+      "httpStatus": 403,
+      "verbs": ["put"]
+    },
+    "nested/ace": {
+      "mockFile": "ace.json",
+      "verbs": ["post", "get"],
+      "switch": "customerId"
+    },
+    "var/:id": {
+      "mockFile": "xml/queen.xml",
+      "verbs": ["all"]
+    },
+    "login": {
+      "mockFile": "king.json",
+      "verbs": ["post"],
+      "switch": ["userId", "password"],
+      "responses": {
+        "post": {"httpStatus": 401}
+      },
+      "switchResponses": {
+        "userIduser1passwordgood": {"httpStatus": 200}
+      }
+    },
+    "firstheaders": {
+      "mockFile": "king.json",
+      "contentType": "foobar",
+      "headers": {
+        "x-requested-by": "4c2df03a17a803c063f21aa86a36f6f55bdde1f85b89e49ee1b383f281d18c09c2ba30654090df3531cd2318e3c",
+        "dummyheader": "dummyvalue"
+      },
+      "verbs": ["get"]
+    },
+    "noMockFile": {
+      "verbs": ["get"]
+    }, 
+    "template/:name/:number":{
+      "mockFile":"templateSample.json",
+      "enableTemplate" : true, 
+      "contentType": "application/json", 
+      "verbs": ["get"]
+    }
+  }
+}
